@@ -23,7 +23,7 @@
       "source": "gammelgaard52/ai-agent-library",
       "sourceType": "github",
       "skillPath": "skills/sovereign-dpo/SKILL.md",
-      "computedHash": "9c10b30707d09adc3b4363ec4638f4ed83735ba8ca338833f604a13eb80cc99f"
+      "computedHash": "5fbbdad1f7c16192203d3fa90bd733c420c31e7972cb6d15d03a354977387da9"
     },
     "tester": {
       "source": "gammelgaard52/ai-agent-library",
