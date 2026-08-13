@@ -25,6 +25,12 @@
       "skillPath": "skills/sovereign-dpo/SKILL.md",
       "computedHash": "5fbbdad1f7c16192203d3fa90bd733c420c31e7972cb6d15d03a354977387da9"
     },
+    "skill-reviewer": {
+      "source": "gammelgaard52/ai-agent-library",
+      "sourceType": "github",
+      "skillPath": "skills/skill-reviewer/SKILL.md",
+      "computedHash": "a51b84472398da32ffd2c6cc12a5b4a6729db8612d1e36f4f4a168d6902e7f8c"
+    },
     "tester": {
       "source": "gammelgaard52/ai-agent-library",
       "sourceType": "github",
