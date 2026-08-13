@@ -1,24 +1,6 @@
 {
   "version": 1,
   "skills": {
-    "architect": {
-      "source": "gammelgaard52/ai-agent-library",
-      "sourceType": "github",
-      "skillPath": "skills/architect/SKILL.md",
-      "computedHash": "453b307b6ee3ff6604d5313ebc6d59e6c60320c5b4e19bb76a029d1f8cd6077f"
-    },
-    "developer": {
-      "source": "gammelgaard52/ai-agent-library",
-      "sourceType": "github",
-      "skillPath": "skills/developer/SKILL.md",
-      "computedHash": "985a1b25a111abbd411c74cead7dcca50c94f51c2fb0291830c14210736541c3"
-    },
-    "reviewer": {
-      "source": "gammelgaard52/ai-agent-library",
-      "sourceType": "github",
-      "skillPath": "skills/reviewer/SKILL.md",
-      "computedHash": "d41737b4f4bc5e8ed2d56722c86b378ac1d27e1c316d80668405c4b2d6e28a04"
-    },
     "skill-creator": {
       "source": "OpenHands/extensions",
       "sourceType": "github",
@@ -30,18 +12,6 @@
       "sourceType": "github",
       "skillPath": "skills/skill-reviewer/SKILL.md",
       "computedHash": "7d48ded6305e073cf9da8100074009f6a3404eada73ca0c741cb4d3edf69930f"
-    },
-    "sovereign-dpo": {
-      "source": "gammelgaard52/ai-agent-library",
-      "sourceType": "github",
-      "skillPath": "skills/sovereign-dpo/SKILL.md",
-      "computedHash": "5fbbdad1f7c16192203d3fa90bd733c420c31e7972cb6d15d03a354977387da9"
-    },
-    "tester": {
-      "source": "gammelgaard52/ai-agent-library",
-      "sourceType": "github",
-      "skillPath": "skills/tester/SKILL.md",
-      "computedHash": "1bd63c50e8597fc3d91bd821d75b1f5e1efe9bb728abf16403d21a1d6efeb465"
     }
   }
 }
