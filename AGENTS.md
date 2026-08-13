@@ -34,17 +34,17 @@ Repair flow:
 
 Skill Reviewer FAIL -> Skill Creator -> Skill Reviewer
 
-## Standard development workflow
+## DENY non-Agent-Skill work
 
-For all other autonomous development tasks, execute sequentially:
+This repository is only for Agent Skill-related activities.
 
-1. Architect
-2. Developer
-3. Reviewer
-4. Tester
+If the GitHub Issue is not directly related to creating, reviewing, modifying, maintaining, validating, or otherwise managing Agent Skills in this repository:
 
-Only after Tester reports READY FOR PR may changes be committed, pushed and opened as a Pull Request.
+1. DENY the task.
+2. Do not modify any files.
+3. Do not commit or push any changes.
+4. Do not create or update a Pull Request.
+5. Report that the Issue is outside the Agent Skill scope of this repository.
+6. Stop immediately and perform no further work.
 
-Never merge the Pull Request automatically.
-
-Stop and report the blocker if the selected workflow cannot reach a valid result.
+Stop and report the blocker if a skill-related Issue does not match a defined repository workflow.
