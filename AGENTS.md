@@ -34,8 +34,6 @@ Repair flow:
 
 Skill Reviewer FAIL -> Skill Creator -> Skill Reviewer
 
-There is no Architect, Developer, general Reviewer, or Tester stage in the new-Agent-Skill workflow.
-
 ## Standard development workflow
 
 For all other autonomous development tasks, execute sequentially:
