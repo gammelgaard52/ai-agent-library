@@ -1,0 +1,7 @@
+*
+!.gitignore
+
+!skill-creator/
+!skill-creator/**
+!skill-reviewer/
+!skill-reviewer/**
