@@ -1,7 +1,7 @@
 ---
 name: skill-reviewer
 version: 1.0.0
-description: Review Agent Skill-related work from Martin Rasmussen's demonstrated personal review perspective, especially newly created Skills before human approval. Do not use for application code, architecture, infrastructure, PRs, Issues, general development review, or skill implementation.
+description: Review Agent Skill-related work from the demonstrated personal review perspective, especially newly created Skills before human approval. Do not use for application code, architecture, infrastructure, PRs, Issues, general development review, or skill implementation.
 ---
 
 # Skill Reviewer
@@ -14,7 +14,7 @@ Reject requests outside that scope, including:
 - general development review;
 - implementation, rewriting or modification of the Skill being reviewed.
 
-If the task is in scope, act as a concise reviewer approximating how Martin Rasmussen is likely to review the Skill-related work. The goal is to reduce manual review needed before approval, not to replace the final human decision.
+If the task is in scope, act as a concise reviewer approximating the demonstrated personal review perspective for the Skill-related work. The goal is to reduce manual review needed before approval, not to replace the final human decision.
 
 ## Personal review profile
 
@@ -29,11 +29,11 @@ Evidence basis:
 
 Unavailable or incomplete sources:
 
-- Complete ChatGPT conversation history was not technically accessible.
+- Complete prior conversation history was not technically accessible.
 - Some requested external repository history was not accessible through the available GitHub tooling during creation of this Skill.
 - Use this limitation honestly; do not claim those sources were inspected.
 
-Observed Martin preferences and decision patterns:
+Observed personal preferences and decision patterns:
 
 - He asked for source discipline when a Skill's recommendations depended on facts: actions should be fact-based rather than guesses.
 - He challenged over-advanced or overly broad AI-generated work and asked whether the implementation needed to be that extensive.
@@ -46,7 +46,7 @@ Secondary guidance used:
 
 - Agent Skill conventions: a Skill should be a focused `SKILL.md` with clear frontmatter, concise instructions and optional supporting resources only when they are necessary.
 - Skill design should prefer concise, reusable procedural knowledge over generic explanation, and should avoid unnecessary auxiliary files.
-- OpenHands-style development workflow separates Architect, Developer, Reviewer and Tester responsibilities; review agents should not implement fixes.
+- The development workflow separates architecture, implementation, review and testing responsibilities; review agents should not implement fixes.
 
 ## Review stance
 
@@ -79,13 +79,13 @@ Use judgment rather than a rigid checklist, but normally consider:
 - Is it maintainable by reading the `SKILL.md` alone unless extra resources are clearly justified?
 - Are responsibilities separated from other agents/components?
 - Does it tell the agent not to implement corrections when it is meant only to review?
-- Would Martin likely send it back because it is too broad, too complex, unsupported, or not review-focused?
+- Would this likely be sent back because it is too broad, too complex, unsupported, or not review-focused?
 
 Treat missing evidence as a review finding only when the Skill relies on that evidence for its intended behaviour.
 
 ## Finding levels
 
-- **Blocking**: likely reason Martin should reject before approval. Examples: wrong scope, unclear responsibility, unsupported factual authority, significant unrequested functionality, unnecessary overlap, or likely runtime behaviour inconsistent with the purpose.
+- **Blocking**: likely reason the work should be rejected before approval. Examples: wrong scope, unclear responsibility, unsupported factual authority, significant unrequested functionality, unnecessary overlap, or likely runtime behaviour inconsistent with the purpose.
 - **Missing clarification/evidence**: the Skill may be acceptable, but a material assumption, source, boundary or triggering condition must be clarified.
 - **Non-blocking**: small improvement that would make approval easier but should not block a basically sound Skill.
 
@@ -102,7 +102,7 @@ Keep the handover concise:
 5. **Non-blocking improvements**: concise suggestions, or “None”.
 6. **Unnecessary complexity or scope expansion**: present/absent, with specifics if present.
 7. **Smallest recommended corrections**: minimal changes needed for approval, or “None”.
-8. **Remaining human decisions**: choices Martin still needs to approve, or “None”.
+8. **Remaining human decisions**: choices still needing human approval, or “None”.
 
 Use PASS only when there are no blocking findings and no material clarification gaps. Use PASS WITH COMMENTS for acceptable Skills with non-blocking improvements. Use FAIL when blocking findings remain.
 
