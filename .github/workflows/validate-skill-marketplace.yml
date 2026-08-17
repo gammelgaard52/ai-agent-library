@@ -1,0 +1,29 @@
+name: Validate skill marketplace
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-skill-marketplace:
+    name: Skill marketplace consistency
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate skills and marketplace are in 1:1 sync
+        run: python scripts/validate_skill_marketplace.py

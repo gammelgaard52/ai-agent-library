@@ -1,6 +1,6 @@
 ---
 name: skill-reviewer
-version: 1.0.0
+version: 1.1.0
 description: Review Agent Skill-related work from the demonstrated personal review perspective, especially newly created Skills before human approval. Do not use for application code, architecture, infrastructure, PRs, Issues, general development review, or skill implementation.
 ---
 
@@ -47,6 +47,7 @@ Secondary guidance used:
 - Agent Skill conventions: a Skill should be a focused `SKILL.md` with clear frontmatter, concise instructions and optional supporting resources only when they are necessary.
 - Skill design should prefer concise, reusable procedural knowledge over generic explanation, and should avoid unnecessary auxiliary files.
 - The development workflow separates architecture, implementation, review and testing responsibilities; review agents should not implement fixes.
+- In this repository, newly published Skills must also be registered in `.plugin/marketplace.json` so the marketplace can expose them to OpenHands.
 
 ## Review stance
 
@@ -81,11 +82,21 @@ Use judgment rather than a rigid checklist, but normally consider:
 - Does it tell the agent not to implement corrections when it is meant only to review?
 - Would this likely be sent back because it is too broad, too complex, unsupported, or not review-focused?
 
+For a newly created Skill in `ai-agent-library`, also verify marketplace publication:
+
+- `.plugin/marketplace.json` contains exactly one entry for the new Skill;
+- the marketplace entry `name` exactly matches the `name` in the Skill frontmatter;
+- the marketplace `source` is a repository-relative path using the existing convention, normally `./skills/<skill-name>`;
+- the referenced directory exists and contains the reviewed `SKILL.md`;
+- the change does not introduce duplicate marketplace names or unnecessary alternate registry structures.
+
+If an existing Skill is renamed or moved, verify any affected marketplace entry remains consistent. Do not implement marketplace corrections yourself; report them as findings.
+
 Treat missing evidence as a review finding only when the Skill relies on that evidence for its intended behaviour.
 
 ## Finding levels
 
-- **Blocking**: likely reason the work should be rejected before approval. Examples: wrong scope, unclear responsibility, unsupported factual authority, significant unrequested functionality, unnecessary overlap, or likely runtime behaviour inconsistent with the purpose.
+- **Blocking**: likely reason the work should be rejected before approval. Examples: wrong scope, unclear responsibility, unsupported factual authority, significant unrequested functionality, unnecessary overlap, invalid/missing marketplace registration for a new published Skill, or likely runtime behaviour inconsistent with the purpose.
 - **Missing clarification/evidence**: the Skill may be acceptable, but a material assumption, source, boundary or triggering condition must be clarified.
 - **Non-blocking**: small improvement that would make approval easier but should not block a basically sound Skill.
 
@@ -100,9 +111,10 @@ Keep the handover concise:
 3. **Blocking findings**: concrete issues, or “None”.
 4. **Missing clarification/evidence**: concrete gaps, or “None”.
 5. **Non-blocking improvements**: concise suggestions, or “None”.
-6. **Unnecessary complexity or scope expansion**: present/absent, with specifics if present.
-7. **Smallest recommended corrections**: minimal changes needed for approval, or “None”.
-8. **Remaining human decisions**: choices still needing human approval, or “None”.
+6. **Marketplace registration**: valid/invalid/not applicable, with the checked name/source when applicable.
+7. **Unnecessary complexity or scope expansion**: present/absent, with specifics if present.
+8. **Smallest recommended corrections**: minimal changes needed for approval, or “None”.
+9. **Remaining human decisions**: choices still needing human approval, or “None”.
 
 Use PASS only when there are no blocking findings and no material clarification gaps. Use PASS WITH COMMENTS for acceptable Skills with non-blocking improvements. Use FAIL when blocking findings remain.
 
@@ -114,5 +126,6 @@ Use these examples as calibration when judging a new Skill:
 - Unclear responsibility boundaries: should fail if it reviews, implements, tests and approves its own changes without separation.
 - Unsupported factual claims: should require clarification or fail if it makes legal, vendor or technical claims without requiring sources.
 - Unnecessary scope expansion: should fail if a narrow requested Skill becomes a general consultant, architecture reviewer or PR reviewer.
+- Missing marketplace registration: a newly created Skill intended for publication in this repository should fail until `.plugin/marketplace.json` contains one valid matching entry.
 - Structurally valid but behaviourally poor Skill: should fail if frontmatter and Markdown are valid but trigger wording or instructions would cause the wrong runtime behaviour.
-- Simple correctly scoped Skill: should pass when it has clear purpose, narrow trigger, standard structure, evidence discipline where needed, and no unrequested features.
+- Simple correctly scoped Skill: should pass when it has clear purpose, narrow trigger, standard structure, evidence discipline where needed, correct marketplace registration when applicable, and no unrequested features.
