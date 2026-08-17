@@ -1,0 +1,33 @@
+{
+  "name": "gammelgaard-agent-skills",
+  "owner": {
+    "name": "gammelgaard52"
+  },
+  "description": "Standard OpenHands marketplace for reusable Agent Skills maintained in ai-agent-library.",
+  "skills": [
+    {
+      "name": "architect",
+      "source": "./skills/architect"
+    },
+    {
+      "name": "developer",
+      "source": "./skills/developer"
+    },
+    {
+      "name": "reviewer",
+      "source": "./skills/reviewer"
+    },
+    {
+      "name": "tester",
+      "source": "./skills/tester"
+    },
+    {
+      "name": "skill-reviewer",
+      "source": "./skills/skill-reviewer"
+    },
+    {
+      "name": "sovereign-dpo",
+      "source": "./skills/sovereign-dpo"
+    }
+  ]
+}
